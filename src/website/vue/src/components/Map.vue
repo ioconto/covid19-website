@@ -98,7 +98,7 @@ export default {
   },
   async created() {
     const response = await fetch(
-      "https://raw.githubusercontent.com/ioconto/covid19/master/opendata/200328/it-total-deaths.json"
+      "https://raw.githubusercontent.com/ioconto/covid19/master/opendata/current/it-total-deaths.json"
     );
     this.geoJson = await response.json();
 
@@ -148,19 +148,19 @@ export default {
           '" target="_blank"><strong>' +
           feature.properties.name +
           "</strong></a><br />";
-        c += "Decessi Marzo 2020: " + feature.properties.deaths + "<br />";
+        c += "Decessi Marzo 2020: " + feature.properties.deaths + " (+" +
+          feature.properties.ratio * 100 +
+          "%)<br />";
         c +=
           "Decessi Marzo 2015-19: " +
           feature.properties.avgDeaths +
-          " (+" +
-          feature.properties.ratio * 100 +
-          "%)<br />";
+          "<br />";
         c += "Differenza: " + feature.properties.delta + "<br />";
         c += "Popolazione: " + feature.properties.population + "<br />";
         c +=
           "Pecentuale decessi su popolazione: " +
           feature.properties.mortality +
-          "<br />";
+          "%<br />";
         layer.bindPopup(c);
       }
     },

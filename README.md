@@ -1,4 +1,5 @@
-#Covid19 Map
+# covid19-website
+ioConto website about the Covid19 outbreak
 
 It's a simple one page application that should display in a beautiful way data coming from a public json.
 

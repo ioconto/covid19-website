@@ -75,15 +75,15 @@ export default {
       loc: {}
     };
   },
-  async beforeCreate() {
+  async beforeCreate() { /*
     const response = await fetch(
-      "https://raw.githubusercontent.com/ioconto/covid19/master/opendata/200328/it-total-deaths.json"
+      "https://raw.githubusercontent.com/ioconto/covid19/master/opendata/current/it-total-deaths.json"
     );
     this.geoJson = await response.json();
     this.locations = this.geoJson.features.map(feature => ({
       name: feature.properties.name,
       coordinates: feature.geometry.coordinates
-    }));
+    })); */
   },
 
   methods: {
